@@ -1,4 +1,41 @@
-button[type="submit"] {
+.new-tweet {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%
+}
+
+#tweet-text{
+  width: 100%;
+  background-color: inherit;
+  border: 0px;
+  margin: 0px;
+  padding-bottom: 10px black;
+  outline: none;
+  resize: none;
+}
+
+.new-tweet textarea {
+border-bottom: 10px brown;
+}
+
+.new-tweet footer{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+
+
+.new-tweet button[type="submit"]{
+  font-family: 'Bungee', cursive;
+  background-color: #008DFF;
+  color: white;
+  border: 0px;
+  border-radius: 6px;
+}
+
+.new-tweet output{
   font-family: 'Bungee', cursive;
 };
-

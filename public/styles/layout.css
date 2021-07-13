@@ -21,10 +21,19 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-
-
-
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  background-color:#f4f1ec;
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center
+}

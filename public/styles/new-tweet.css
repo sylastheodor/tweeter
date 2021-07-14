@@ -10,14 +10,11 @@
   background-color: inherit;
   border: 0px;
   margin: 0px;
-  padding-bottom: 10px black;
+  border-bottom: 5px solid #545149;
   outline: none;
   resize: none;
 }
 
-.new-tweet textarea {
-border-bottom: 10px brown;
-}
 
 .new-tweet footer{
   display:flex;

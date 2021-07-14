@@ -1,0 +1,26 @@
+article[name='tweet']{
+  margin: inherit;
+  border: 3px solid #545149;
+  border-radius: 3px;
+  
+}
+
+article[name='tweet'] header{
+  color: black;
+}
+
+article[name='tweet'] footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+article[name='tweet'] div.icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+article[name='tweet'] div.icons i{
+  padding: 5px;
+}

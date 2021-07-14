@@ -1,9 +1,12 @@
-article[name='tweet']{
+.tweet-container article{
   margin: inherit;
   border: 3px solid #545149;
   border-radius: 3px;
   padding: 5px
-  
+}
+
+.tweet-container article:hover{
+  box-shadow: 5px 4px #58554c42;
 }
 
 article[name='tweet'] header{
@@ -25,4 +28,9 @@ article[name='tweet'] div.icons{
 
 article[name='tweet'] div.icons i{
   padding: 5px;
+}
+
+article[name='tweet'] div.icons i:hover{
+  transform: scale(1.2);
+  color: #008DFF;
 }

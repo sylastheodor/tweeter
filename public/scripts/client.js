@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// const { tweets } = require("../../server/lib/in-memory-db");
+
 //<div class="tweet-container">
 /* <article name = "tweet">
 <header>username</header>
@@ -21,30 +23,7 @@ tweet
 
 $(document).ready(function() {
 
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of like three REALLY tall women I met in Talahassee."
-    },
-    "created_at": 1626142449843
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1626228849843
-  }
-];
+
 
 // const createTweetElement = function(tweetData) {
 //   const $tweet=$(`
@@ -67,7 +46,7 @@ const tweetData = [
 
 // const tweetButton = document.querySelector('button[type="submit"]')
 
-$('form').submit(/*[POST?]*/function(event) {
+$('form').submit(function(event) {
   event.preventDefault();
   const formData = $(this).serialize();
   $.ajax({
@@ -75,15 +54,9 @@ $('form').submit(/*[POST?]*/function(event) {
     url: "/tweets",
     data: formData
   })
-  console.log('formData:', formData)
-} )
+  console.log(formData)
+})
 
-
-
-// $.ajax('form', { method: 'GET' })
-//     .then(function (morePostsHtml) {
-//       console.log('Success: ', morePostsHtml);
-//       $button.replaceWith(morePostsHtml);
 
 const createTweetElementRedux = function(post) {
   const $article = $('<article>', {'name': "tweet"});
@@ -112,14 +85,26 @@ const createTweetElementRedux = function(post) {
 }
 
 const renderTweets = function(tweets) {
+  console.log(tweets)
   for(let i = 0; i<tweets.length; i++){
     $('div.tweet-container').append(createTweetElementRedux(tweets[i]));
   }
 };
 
-renderTweets(tweetData)
-// const $tweet = createTweetElement(tweetData);
-// $('div.tweet-container').append($tweet);
+const loadTweets = function() {
+  $.ajax({
+    method: "GET",
+    url: "/tweets",
+  })
+  .then(renderTweets)
+};
+
+loadTweets()
+
+
+
+
+
 
 
 })

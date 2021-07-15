@@ -1,5 +1,10 @@
-.tweet-container article{
+div.tweet-container{
   margin: inherit;
+}
+
+.tweet-container article{
+  margin: 4px;
+  margin-bottom: 8px;
   border: 3px solid #545149;
   border-radius: 3px;
   padding: 5px
@@ -11,6 +16,29 @@
 
 article[name='tweet'] header{
   color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+
+article[name='tweet'] header div[name='name-photo']{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center
+}
+
+article[name='tweet'] header div[name='name-photo'] img{
+  padding: 5px;
+  height: 2em;
+  width: auto;
+}
+
+article[name='tweet'] header div[name='handle']{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 article[name='tweet'] footer{
@@ -18,6 +46,7 @@ article[name='tweet'] footer{
   flex-direction: row;
   justify-content: space-between;
   border-top: 3px solid #545149;
+  font-size: 0.75em;
 }
 
 article[name='tweet'] div.icons{

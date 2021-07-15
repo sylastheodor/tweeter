@@ -65,6 +65,26 @@ const tweetData = [
 // }
 
 
+// const tweetButton = document.querySelector('button[type="submit"]')
+
+$('form').submit(/*[POST?]*/function(event) {
+  event.preventDefault();
+  const formData = $(this).serialize();
+  $.ajax({
+    method: "POST",
+    url: "/tweets",
+    data: formData
+  })
+  console.log('formData:', formData)
+} )
+
+
+
+// $.ajax('form', { method: 'GET' })
+//     .then(function (morePostsHtml) {
+//       console.log('Success: ', morePostsHtml);
+//       $button.replaceWith(morePostsHtml);
+
 const createTweetElementRedux = function(post) {
   const $article = $('<article>', {'name': "tweet"});
     const $header = $('<header>');

@@ -46,30 +46,30 @@ const tweetData = [
   }
 ];
 
-const createTweetElement = function(tweetData) {
-  const $tweet=$(`
-  <article name = "tweet">
-  <header>
-  <div name="name-photo"><img src=${tweetData.user.avatars} height="50" width="auto" img>${tweetData.user.name}</div><div name="handle">${tweetData.user.handle}</div></header>
-  ${tweetData.content.text}
-  <footer>${timeago.format(tweetData.created_at)}
-    <div class = "icons">
-      <i class="fas fa-flag"></i> 
-      <i class="fas fa-retweet"></i> 
-      <i class="fas fa-heart"></i> 
-    </div>
-  </footer>
-  </article>
-  `)
-  return $tweet
-}
+// const createTweetElement = function(tweetData) {
+//   const $tweet=$(`
+//   <article name = "tweet">
+//   <header>
+//   <div name="name-photo"><img src=${tweetData.user.avatars} height="50" width="auto" img>${tweetData.user.name}</div><div name="handle">${tweetData.user.handle}</div></header>
+//   ${tweetData.content.text}
+//   <footer>${timeago.format(tweetData.created_at)}
+//     <div class = "icons">
+//       <i class="fas fa-flag"></i> 
+//       <i class="fas fa-retweet"></i> 
+//       <i class="fas fa-heart"></i> 
+//     </div>
+//   </footer>
+//   </article>
+//   `)
+//   return $tweet
+// }
 
 
 const createTweetElementRedux = function(post) {
   const $article = $('<article>', {'name': "tweet"});
     const $header = $('<header>');
       const $nameAndPhoto = $('<div>', {'name': 'name-photo'}).text(post.user.name);
-        const $image = $('<img src=${post.user.avatars} img>')
+        const $image = $('<img>').attr('src', post.user.avatars)
       const $handle = $('<div>', {'name': 'handle'}).text(post.user.handle)
     $article.text(post.content.text)
     const $footer = $('<footer>').text(timeago.format(post.created_at))
@@ -82,15 +82,18 @@ const createTweetElementRedux = function(post) {
 
   $icons.append($flag, $retweet, $heart);
   $footer.append($icons);
-  $nameAndPhoto.append($image);
+  $nameAndPhoto.prepend($image);
   $header.append($nameAndPhoto, $handle);
-  $article.append($header, $footer);
-  $post.append($article);
+  $article.append($footer);
+  $article.prepend($header);
+  
+
+  return $article
 }
 
 const renderTweets = function(tweets) {
   for(let i = 0; i<tweets.length; i++){
-    $('div.tweet-container').append(createTweetElement(tweets[i]));
+    $('div.tweet-container').append(createTweetElementRedux(tweets[i]));
   }
 };
 

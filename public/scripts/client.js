@@ -26,6 +26,11 @@ $(document).ready(function() {
     
     return $article;
   };
+
+  //called in later functions
+  const textBox = document.querySelector('#tweet-text')
+  const counter = document.querySelector('output.counter')
+
   
   const renderTweets = function(tweets) {
     $('div.tweet-container').empty();  //destorying the HTML ELEMENT that holds the tweets, so that we can pass a clean one.
@@ -44,16 +49,15 @@ $(document).ready(function() {
   
   //button hider/error handler
   $('form').on('click input', function(event) {
-    const formData = $(this).serialize();
-    if (formData.length > 145) {
+    if (textBox.value.length > 140) {
       $('button.error').show()
       $('button[type="submit"]').hide()
     } 
-    if (formData === 'text='){
+    if (textBox.value.length === 0){
       $('button.error').show()
       $('button[type="submit"]').hide()
     }
-    if (formData.length > 5 && formData.length <= 145){
+    if (textBox.value.length > 0 && textBox.value.length <= 140){
       $('button.error').hide()
       $('button[type="submit"]').show()
     }
@@ -63,11 +67,9 @@ $(document).ready(function() {
 
   $('form').submit(function(event) {
     event.preventDefault();
-    const textBox = document.querySelector('#tweet-text')
-    const counter = document.querySelector('output.counter')
     const formData = $(this).serialize();
     //formData returns as text='inputstring' so I'm adding an extra 5 characters to the limit
-    if (formData.length > 145) {
+    if (textBox.value.length > 140) {
       alert('Tweet Too Big!')
     } else if (formData === 'text='){
       alert('Tweet Too Tiny!')

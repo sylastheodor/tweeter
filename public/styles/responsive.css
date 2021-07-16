@@ -2,12 +2,19 @@
   
   body{
     display: flex;
-    
+    justify-content: space-between;
   }
 
-  .site-header{
-    display: flex;
-    flex-direction: column;
+  
+  #movable-icon{
+    height: 29%;
+    width: 32%;
+    margin: 7.5vw;
+    margin-top: 24.5vh;
+  }
+
+  div.profile {
+    padding-top: 4vh;
   }
 
   nav{
@@ -16,6 +23,11 @@
 
   .new-tweet{
     padding-top: 16vh;
+  }
+
+  main.container{
+    margin-top: 7.5vh;
+    width: 40%;
   }
 
 }

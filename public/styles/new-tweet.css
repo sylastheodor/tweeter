@@ -33,6 +33,10 @@
   border-radius: 6px;
 }
 
+.new-tweet button[type="submit"]:hover{
+  transform: scale(1.1);
+}
+
 .new-tweet output{
   font-family: 'Bungee', cursive;
 };

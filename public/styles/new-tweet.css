@@ -37,6 +37,14 @@
   transform: scale(1.1);
 }
 
+.new-tweet button.error{
+  font-family: 'Bungee', cursive;
+  background-color: #0060af;
+  color: rgb(177, 177, 177);
+  border: 0px;
+  border-radius: 6px;
+}
+
 .new-tweet output{
   font-family: 'Bungee', cursive;
 };

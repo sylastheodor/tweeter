@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const $tweetBox = $('textarea#tweet-text')
+  const $tweetBox = $('textarea#tweet-text');
   $tweetBox.on('input',function() {
     let counter = document.querySelector('output.counter');
     const characters = 140 - this.value.length;

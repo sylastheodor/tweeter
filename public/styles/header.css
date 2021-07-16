@@ -1,12 +1,12 @@
 header.site-header {
-  height: 400px;
+  height: 52vh;
   width: 100%;
   background-color: #ff61df;
   background-image: url(http://www.transparenttextures.com/patterns/foggy-birds.png);
 }
 
 .profile {
-  padding-top: 125px;
+  padding-top: 17vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,11 +14,15 @@ header.site-header {
 }
 
 img {
-  height: 175px;
+  height: 25vh;
   width: auto
 }
 
 
+h2 {
+  margin-top: 0.4em;
+
+}
 
 .name {
   padding-top: 0px;

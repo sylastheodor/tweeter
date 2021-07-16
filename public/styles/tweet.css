@@ -1,5 +1,9 @@
 div.tweet-container{
   margin: inherit;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%
 }
 
 .tweet-container article{

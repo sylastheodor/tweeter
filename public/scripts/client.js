@@ -42,15 +42,31 @@ $(document).ready(function() {
       .then(renderTweets);
   };
   
+  //button hider/error handler
+  $('form').on('click input', function(event) {
+    const formData = $(this).serialize();
+    if (formData.length > 145) {
+      $('button.error').show()
+      $('button[type="submit"]').hide()
+    } 
+    if (formData === 'text='){
+      $('button.error').show()
+      $('button[type="submit"]').hide()
+    }
+    if (formData.length > 5 && formData.length <= 145){
+      $('button.error').hide()
+      $('button[type="submit"]').show()
+    }
+  });
 
   $('form').submit(function(event) {
     event.preventDefault();
     const formData = $(this).serialize();
     //formData returns as text='inputstring' so I'm adding an extra 5 characters to the limit
     if (formData.length > 145) {
-      alert("Sorry, your tweet is too long!")
+      alert('Tweet Too Big!')
     } else if (formData === 'text='){
-      alert("Tweet Empty!");
+      alert('Tweet Too Tiny!')
     } else {
       $.ajax({
         method: "POST",

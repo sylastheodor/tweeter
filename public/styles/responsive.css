@@ -1,0 +1,22 @@
+@media only screen and (min-width: 768px) {
+  
+  body{
+    display: flex;
+    
+  }
+
+  .site-header{
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav{
+    padding-top: 16vh;
+  }
+
+  .new-tweet{
+    padding-top: 16vh;
+  }
+
+}
+

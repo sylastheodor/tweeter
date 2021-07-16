@@ -52,11 +52,10 @@
       <section class="new-tweet">
       <form method= "POST" action="./tweets">
         <textarea id="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
-        <p class="error1" hidden>Whoa. </p>
-        <p class="error2" hidden>Whoa. </p>
+        <p class="error1" hidden> You gotta type something first! </p>
         <footer>
-          <button type="submit">Tweet</button>
-          <button class="error" hidden>Tweet</button>
+          <button type="submit" hidden>Tweet</button>
+          <button class="error" type="button" value="button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </footer>
       </form>

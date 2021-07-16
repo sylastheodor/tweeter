@@ -59,8 +59,12 @@ $(document).ready(function() {
     }
   });
 
+
+
   $('form').submit(function(event) {
     event.preventDefault();
+    const textBox = document.querySelector('#tweet-text')
+    const counter = document.querySelector('output.counter')
     const formData = $(this).serialize();
     //formData returns as text='inputstring' so I'm adding an extra 5 characters to the limit
     if (formData.length > 145) {
@@ -73,9 +77,13 @@ $(document).ready(function() {
         url: "/tweets",
         data: formData
       })
-      .then(loadTweets);
+      .then(loadTweets)
       //loading every time the form submits
     }
+    textBox.value = '';
+    counter.value = 140
+    $('button.error').show()
+    $('button[type="submit"]').hide()
   });
-  loadTweets()
+  loadTweets();
 });

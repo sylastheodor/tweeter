@@ -28,12 +28,12 @@ $(document).ready(function() {
   };
 
   //called in later functions
-  const textBox = document.querySelector('#tweet-text')
-  const counter = document.querySelector('output.counter')
+  const textBox = document.querySelector('#tweet-text');
+  const counter = document.querySelector('output.counter');
 
   
   const renderTweets = function(tweets) {
-    $('div.tweet-container').empty();  //destorying the HTML ELEMENT that holds the tweets, so that we can pass a clean one.
+    $('div.tweet-container').empty();
     for (let i = 0; i < tweets.length; i++) {
       $('div.tweet-container').prepend(createTweetElementRedux(tweets[i]));
     }
@@ -48,18 +48,18 @@ $(document).ready(function() {
   };
   
   //button hider/error handler
-  $('form').on('click input', function(event) {
+  $('form').on('click input', function() {
     if (textBox.value.length > 140) {
-      $('button.error').show()
-      $('button[type="submit"]').hide()
-    } 
-    if (textBox.value.length === 0){
-      $('button.error').show()
-      $('button[type="submit"]').hide()
+      $('button.error').show();
+      $('button[type="submit"]').hide();
     }
-    if (textBox.value.length > 0 && textBox.value.length <= 140){
-      $('button.error').hide()
-      $('button[type="submit"]').show()
+    if (textBox.value.length === 0) {
+      $('button.error').show();
+      $('button[type="submit"]').hide();
+    }
+    if (textBox.value.length > 0 && textBox.value.length <= 140) {
+      $('button.error').hide();
+      $('button[type="submit"]').show();
     }
   });
 
@@ -70,22 +70,21 @@ $(document).ready(function() {
     const formData = $(this).serialize();
     //formData returns as text='inputstring' so I'm adding an extra 5 characters to the limit
     if (textBox.value.length > 140) {
-      alert('Tweet Too Big!')
-    } else if (formData === 'text='){
-      alert('Tweet Too Tiny!')
+      alert('Tweet Too Big!');
+    } else if (formData === 'text=') {
+      alert('Tweet Too Tiny!');
     } else {
       $.ajax({
         method: "POST",
         url: "/tweets",
         data: formData
       })
-      .then(loadTweets)
-      //loading every time the form submits
+        .then(loadTweets);
     }
     textBox.value = '';
-    counter.value = 140
-    $('button.error').show()
-    $('button[type="submit"]').hide()
+    counter.value = 140;
+    $('button.error').show();
+    $('button[type="submit"]').hide();
   });
   loadTweets();
 });

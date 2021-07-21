@@ -5,9 +5,9 @@ $(document).ready(function() {
     const characters = 140 - this.value.length;
     $(counter).val(characters);
     if (characters < 0){
-      $(counter).css("color", "crimson");
+      $(counter).addClass('error-count');
     } else {
-      $(counter).css('color', 'inherit');
+      $(counter).removeClass('error-count');
     }
   })
 });

@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter sim.
 
-My second project at Lighthouse Labs. I used Tweeter to practice my front-end design skills in HTML, CSS, jQuery, and AJAX, while implementing a little biut of my backend skills with Node and Express.
+My second project at Lighthouse Labs. I used Tweeter to practice my front-end design skills in HTML, CSS, jQuery, and AJAX, while implementing a little bit of my backend skills with Node and Express.
 
 ## Screenshots
 

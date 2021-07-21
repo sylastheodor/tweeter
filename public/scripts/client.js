@@ -60,6 +60,8 @@ $(document).ready(function() {
     if (textBox.value.length > 0 && textBox.value.length <= 140) {
       $('button.error').hide();
       $('button[type="submit"]').show();
+      $('p.error1').hide;
+      $('p.error2').hide;
     }
   });
 
@@ -70,7 +72,8 @@ $(document).ready(function() {
     const formData = $(this).serialize();
     //formData returns as text='inputstring' so I'm adding an extra 5 characters to the limit
     if (textBox.value.length > 140) {
-      alert('Tweet Too Big!');
+      $('p.error1').show;
+
     } else if (formData === 'text=') {
       alert('Tweet Too Tiny!');
     } else {

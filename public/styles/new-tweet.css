@@ -15,6 +15,24 @@
   resize: none;
 }
 
+article[name="tweet"]{
+  overflow-wrap: break-word;
+}
+
+p.error1{
+  border:  6px solid crimson;
+  background-color: maroon;
+  color: yellow;
+  overflow-wrap: break-word;
+}
+
+p.error2{
+  border:  6px solid black;
+  background-color: yellow;
+  color: crimson;
+  overflow-wrap: break-word;
+}
+
 
 .new-tweet footer{
   display:flex;
@@ -47,4 +65,9 @@
 
 .new-tweet output{
   font-family: 'Bungee', cursive;
+}
+
+.error-count {
+  font-family: 'Bungee', cursive;
+  color: crimson
 };

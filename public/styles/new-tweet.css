@@ -33,6 +33,13 @@ p.error2{
   overflow-wrap: break-word;
 }
 
+/* .error-resolved{
+  border: 6px dashed rgb(0, 255, 234);;
+  background-color: #ff61df;
+  color: #008DFF;
+  content: "Thx ^_^";
+} */
+
 
 .new-tweet footer{
   display:flex;

@@ -52,16 +52,18 @@ $(document).ready(function() {
     if (textBox.value.length > 140) {
       $('button.error').show();
       $('button[type="submit"]').hide();
+      $('p.error2').removeClass('error-resolved');
     }
     if (textBox.value.length === 0) {
       $('button.error').show();
       $('button[type="submit"]').hide();
+      $('p.error1').removeClass('error-resolved');
     }
     if (textBox.value.length > 0 && textBox.value.length <= 140) {
       $('button.error').hide();
       $('button[type="submit"]').show();
-      $('p.error1').hide;
-      $('p.error2').hide;
+      $('p.error1').slideUp();
+      $('p.error2').slideUp();
     }
   });
 
@@ -72,10 +74,11 @@ $(document).ready(function() {
     const formData = $(this).serialize();
     //formData returns as text='inputstring' so I'm adding an extra 5 characters to the limit
     if (textBox.value.length > 140) {
-      $('p.error1').show;
-
-    } else if (formData === 'text=') {
-      alert('Tweet Too Tiny!');
+      $('p.error2').slideToggle();
+      return;
+    } else if (textBox.value.length === 0) {
+      $('p.error1').slideToggle();
+      return;
     } else {
       $.ajax({
         method: "POST",

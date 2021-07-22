@@ -68,11 +68,10 @@ $(document).ready(function() {
   });
 
 
-
+//error message
   $('form').submit(function(event) {
     event.preventDefault();
     const formData = $(this).serialize();
-    //formData returns as text='inputstring' so I'm adding an extra 5 characters to the limit
     if (textBox.value.length > 140) {
       $('p.error2').slideToggle();
       return;

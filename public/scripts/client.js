@@ -49,19 +49,19 @@ $(document).ready(function() {
   
   //button hider/error handler
   $('form').on('click input', function() {
-    if (textBox.value.length > 140) {
-      $('button.error').show();
-      $('button[type="submit"]').hide();
-      $('p.error2').removeClass('error-resolved');
-    }
-    if (textBox.value.length === 0) {
-      $('button.error').show();
-      $('button[type="submit"]').hide();
-      $('p.error1').removeClass('error-resolved');
-    }
+    // if (textBox.value.length > 140) {
+    //   $('button.error').show();
+    //   $('button[type="submit"]').hide();
+    //   $('p.error2').removeClass('error-resolved');
+    // }
+    // if (textBox.value.length === 0) {
+    //   $('button.error').show();
+    //   $('button[type="submit"]').hide();
+    //   $('p.error1').removeClass('error-resolved');
+    // }
     if (textBox.value.length > 0 && textBox.value.length <= 140) {
-      $('button.error').hide();
-      $('button[type="submit"]').show();
+      // $('button.error').hide();
+      // $('button[type="submit"]').show();
       $('p.error1').slideUp();
       $('p.error2').slideUp();
     }
@@ -89,8 +89,8 @@ $(document).ready(function() {
     }
     textBox.value = '';
     counter.value = 140;
-    $('button.error').show();
-    $('button[type="submit"]').hide();
+    // $('button.error').show();
+    // $('button[type="submit"]').hide();
   });
   loadTweets();
 });

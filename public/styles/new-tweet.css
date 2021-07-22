@@ -21,6 +21,7 @@ article[name="tweet"]{
 
 p.error1{
   border:  6px solid crimson;
+  border-radius: 3px;
   background-color: maroon;
   color: yellow;
   overflow-wrap: break-word;
@@ -29,6 +30,7 @@ p.error1{
 p.error2{
   border:  6px solid black;
   background-color: yellow;
+  border-radius: 3px;
   color: crimson;
   overflow-wrap: break-word;
 }
